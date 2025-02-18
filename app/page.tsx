@@ -1,23 +1,11 @@
 import Image from "next/image";
-import { prisma } from "@/lib/prisma";
 import Input from "@/components/input";
 
 export default async function Home() {
-  const users = await prisma.user.findMany({
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      createdAt: true,
-    },
-  })
-
-  console.log(users)
-
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <div className='w-full'>
+    <div className="flex flex-col items-center justify-items-center min-h-screen gap-16">
+      <main className="w-full flex flex-col gap-8 justify-center items-center min-h-screen">
+        <div className='w-full max-w-sm'>
           <div className="text-lg font-medium">Search for terms:</div>
           <Input />
         </div>

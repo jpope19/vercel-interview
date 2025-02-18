@@ -19,6 +19,7 @@ function Input() {
   const q = async (query: string) => {
     setValue(query)
     setSelectedWord(null)
+    setLoading(true)
 
     if (typingTimeout) clearTimeout(typingTimeout)
 
