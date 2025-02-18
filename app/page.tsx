@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { prisma } from "@/lib/prisma";
+import Input from "@/components/input";
 
 export default async function Home() {
   const users = await prisma.user.findMany({
@@ -59,6 +60,9 @@ export default async function Home() {
           >
             Read our docs
           </a>
+        </div>
+        <div className='w-full'>
+          <Input />
         </div>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
