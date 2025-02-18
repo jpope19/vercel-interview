@@ -1,7 +1,7 @@
 'use client'
 
 import { getWordsButCached } from "@/server/actions/words"
-import { cache, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 function Input() {
   const [value, setValue] = useState('')
