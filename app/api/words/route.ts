@@ -1,7 +1,6 @@
 import { prisma } from "@/lib/prisma"
 
-export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) {
-
+export async function GET() {
   const res = await fetch('http://localhost:3000/wordlist.txt')
   const data = await res.text()
   const words = data.split('\n')
